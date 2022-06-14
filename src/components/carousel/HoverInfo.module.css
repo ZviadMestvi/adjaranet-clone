@@ -1,0 +1,133 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: absolute;
+  padding: 10px 10px 0;
+  background: var(--poster-hover-bg);
+  box-shadow: rgb(0 0 0 / 25%) 0px 0px 10px;
+  border-radius: 4px;
+  width: 400px;
+  min-height: 310px;
+  z-index: 1;
+  color: var(--dark-font-color);
+}
+
+.wrapper::before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: -20px;
+  width: 20px;
+  height: 100%;
+}
+
+.wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0px;
+  right: -20px;
+  width: 20px;
+  height: 100%;
+}
+
+/* title section */
+
+.titleContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.titleContainer h4 {
+  font-weight: 500;
+  font-size: 1.125rem;
+}
+
+.titleContainer h5 {
+  margin-top: 3px;
+  font-weight: 500;
+  font-size: 0.75rem;
+}
+
+.timeContainer {
+  display: flex;
+  align-items: center;
+  font-size: 11px;
+  margin-right: 8px;
+  max-height: 23px;
+}
+
+.timeContainer span {
+  margin-left: 6px;
+  margin-top: 2px;
+}
+
+/* info section */
+
+.infoContainer {
+  padding: 5px 0;
+}
+
+.infoContainer div {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 0.6875rem; /* 11px */
+  margin: 2px 0;
+}
+
+.infoContainer div p {
+  margin-right: 3px;
+}
+
+.infoContainer div span {
+  color: #1a90cf;
+}
+
+/* description section */
+
+.description {
+  margin-top: 10px;
+}
+
+.description h5 {
+  font-weight: 500;
+  font-size: 0.8125rem; /* 13px */
+  margin-bottom: 2px;
+}
+
+.description p {
+  display: -webkit-box;
+  font-family: 'BPG Mrgvlovani';
+  font-size: 0.625rem; /* 10px */
+  line-height: 1.5;
+  padding-right: 5px;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+}
+
+/* bottom section */
+
+.bottomContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 7px;
+  margin-right: 8px;
+  max-height: 22px;
+}
+
+.bottomContainer div {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.bottomContainer div span {
+  font-size: 11px;
+  margin-left: 6px;
+  margin-top: 3px;
+}

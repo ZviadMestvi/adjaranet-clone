@@ -1,0 +1,76 @@
+.wrapper {
+  display: block;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0 15px 0;
+}
+
+.headerContainer h1 {
+  font-weight: 500;
+  font-size: 1.25rem;
+  color: #525252;
+}
+
+.headerContainer button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding: 5px;
+  margin: 0 1px;
+  cursor: pointer;
+}
+
+.headerContainer button:hover svg path {
+  fill: #0083ca;
+}
+
+.collectionsWrapper {
+  display: flex;
+  overflow-x: hidden;
+}
+
+.collections {
+  display: flex;
+  transition: transform 0.5s ease 0s;
+}
+
+.collectionsContainer {
+  display: flex;
+  height: 272px;
+  width: 6900px;
+}
+
+.collectionsSlide {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 1380px;
+}
+
+.mobileCollectionsWrapper {
+  display: none;
+}
+
+.unavailable {
+  opacity: 0.5;
+}
+
+@media only screen and (max-width: 1400px) {
+  .collectionsSlide {
+    width: 980px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .wrapper {
+    display: none;
+  }
+
+  .mobileCollectionsWrapper {
+    display: block;
+  }
+}

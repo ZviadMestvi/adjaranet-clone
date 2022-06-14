@@ -1,0 +1,250 @@
+.wrapper {
+  height: 70px;
+  width: 100%;
+  background: linear-gradient(rgba(7, 7, 7, 0.5) 0%, rgba(7, 7, 7, 0) 100%);
+  position: fixed;
+  top: 0;
+  z-index: 10;
+}
+
+.mobileWrapper {
+  display: none;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10;
+}
+
+.scrolledHeader {
+  background: var(--header-bg-color);
+}
+
+.topLine {
+  height: 3px;
+  background-color: #0083ca;
+}
+
+.headerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  margin: 0 auto;
+  height: 100%;
+  width: 1380px;
+}
+
+.logoContainer {
+  margin-right: 75px;
+  cursor: pointer;
+}
+
+.categoriesContainer {
+  display: flex;
+  align-items: center;
+  margin-right: 100px;
+}
+
+.category {
+  padding: 0 10px;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.category a {
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.tvIcon:hover rect,
+.seriesIcon:hover rect,
+.kidsIcon:hover path {
+  stroke: #0083ca;
+}
+
+.tvIcon:hover path,
+.moviesIcon:hover path,
+.seriesIcon:hover path {
+  fill: #0083ca;
+}
+
+.categoryText {
+  font-size: 0.5625rem; /* 9px */
+  font-family: 'BPG Mrgvlovani Caps 2010', sans-serif;
+  margin-top: 4px;
+}
+
+.category:hover .categoryText {
+  color: #0083ca;
+}
+
+.category:hover .dropdownMenu,
+.category:hover .arrowDown {
+  display: flex;
+}
+
+.arrowDown {
+  display: none;
+  content: '';
+  top: 5px;
+  width: 0px;
+  height: 0px;
+  position: relative;
+  margin-bottom: -2px;
+  margin-left: 42%;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid rgb(226, 226, 226);
+  transition: transform 0.4s ease 0s;
+  transform: rotate(180deg);
+}
+
+.dropdownMenu::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  top: -20px;
+  left: 0px;
+}
+
+.dropdownMenu {
+  display: none;
+  flex-wrap: wrap;
+  align-items: center;
+  position: absolute;
+  background-color: white;
+  border-radius: 3px;
+  width: 400px;
+  font-size: 0.625rem;
+  padding: 5px;
+  top: 56px;
+  left: -235%;
+}
+
+.dropdownMenu p {
+  font-size: 10px;
+  line-height: 25px;
+  padding: 5px 4px;
+  border-bottom: 1px solid white;
+  color: #313131;
+}
+
+.dropdownMenu span {
+  display: flex;
+  align-items: center;
+  color: #cccccc;
+}
+
+.dropdownMenu p:hover {
+  border-color: #0083ca;
+  color: #0083ca;
+}
+
+#seriesDropdown {
+  top: 70px;
+  left: 390px;
+}
+
+.searchBtn {
+  justify-content: center;
+  position: absolute;
+  background-color: #0083cad4;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  right: 0;
+  top: 96%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.darkModeBtn {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.darkModeBtn:hover svg path {
+  fill: #0083ca;
+}
+
+.authBtn {
+  width: 190px;
+  position: relative;
+}
+
+.authBtn button {
+  width: 100%;
+  height: 26px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  background-color: #1877f2;
+  border-radius: 2px;
+  border: none;
+  outline: none;
+  color: white;
+  cursor: pointer;
+}
+
+.userInfo {
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.userInfo h5 {
+  font-size: 15px;
+  margin-right: 14px;
+}
+
+.userInfo p {
+  font-size: 12px;
+  margin-right: 15px;
+  margin-top: 3px;
+  cursor: pointer;
+}
+
+/* for scroll effects */
+
+.greyFill {
+  fill: #545454;
+}
+
+.whiteFill {
+  fill: white;
+}
+
+.greyStroke {
+  stroke: #545454;
+  color: #545454;
+}
+
+.whiteStroke {
+  stroke: white;
+  color: white;
+}
+
+@media only screen and (max-width: 1400px) {
+  .headerContainer {
+    width: 980px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .wrapper {
+    background: transparent;
+  }
+
+  .wrapper {
+    display: none;
+  }
+
+  .mobileWrapper {
+    display: block;
+    background-color: var(--header-bg-color);
+  }
+}

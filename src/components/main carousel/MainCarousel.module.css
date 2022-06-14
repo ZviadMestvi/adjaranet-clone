@@ -1,0 +1,269 @@
+.wrapper {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+  color: white;
+}
+
+.arrowsContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  margin: 0 50px;
+  width: calc(100% - 100px);
+  height: 0;
+  top: 50%;
+  z-index: 3;
+}
+
+.arrowsContainer button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.arrowsContainer svg {
+  width: 34px;
+  height: 172px;
+}
+
+.carouselContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  margin: 0 auto;
+  width: 1380px;
+  bottom: 17%;
+  z-index: 3;
+}
+
+.paginationContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.carouselPagination {
+  display: flex;
+  align-items: flex-end;
+  margin-right: 10px;
+}
+
+.paginationDot {
+  width: 10px;
+  height: 10px;
+  background-color: #c4c4c4;
+  border-radius: 50%;
+  margin-right: 6px;
+  cursor: pointer;
+}
+
+.active {
+  height: 12px;
+  width: 12px;
+  background-color: white;
+  margin-top: 2px;
+}
+
+.movies {
+  display: flex;
+  transition: transform 0.5s ease 0s;
+  height: 500px;
+  width: 9600px;
+  z-index: 4;
+}
+
+.movieContainer {
+  height: 100%;
+}
+
+.movieContainer img {
+  position: relative;
+  object-fit: cover;
+  height: inherit;
+  width: 100vw;
+}
+
+.playIcon {
+  position: relative;
+  left: 50%;
+  bottom: 51%;
+  transform: translate(-50%, -50%);
+  width: 66px;
+  height: 66px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.playIcon:hover svg path {
+  fill: #1a90cf;
+}
+
+.titleContainer {
+  position: relative;
+  left: 7%;
+  bottom: 40%;
+  z-index: 7;
+  cursor: pointer;
+}
+
+.titleContainer h2 {
+  font-size: 1.625rem;
+  font-weight: 400;
+  color: white;
+}
+
+.titleContainer h5 {
+  font-size: 1.125rem;
+  font-weight: 400;
+  color: #dddddd;
+}
+
+.shadow {
+  position: relative;
+  bottom: 500px;
+  left: 0px;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    77.1% 77.1% at 50% 50%,
+    rgba(0, 0, 0, 0) 0%,
+    rgb(0, 0, 0) 100%
+  );
+  pointer-events: none;
+}
+
+.searchContainer {
+  display: flex;
+  position: relative;
+  margin: 0 auto;
+  width: 1380px;
+  bottom: 16.5%;
+  z-index: 4;
+}
+
+.search {
+  text-align: center;
+  font-size: 0.875rem;
+  border-radius: 5px;
+  border: 1px solid #1a90cf;
+  background-color: #c7c6c6;
+  margin: 20px 0;
+  padding: 4px;
+  outline: none;
+  width: 100%;
+  z-index: 4;
+}
+
+.search::placeholder {
+  font-size: 0.875rem;
+  font-family: 'BPG Mrgvlovani Caps 2010';
+}
+
+.search[type='text'] {
+  font-family: 'BPG Mrgvlovani Caps 2010';
+  color: #2c2c2c;
+}
+
+.search:focus ~ .searchShadow {
+  display: block;
+}
+
+.searchContainer label {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.searchShadow {
+  display: none;
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+@media only screen and (max-width: 1400px) {
+  .titleContainer {
+    left: 15%;
+  }
+
+  .carouselContainer,
+  .searchContainer {
+    width: 980px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .wrapper {
+    height: 300px;
+    margin-top: 88px;
+  }
+
+  .arrowsContainer {
+    margin: 0 15px;
+    width: calc(100% - 30px);
+  }
+
+  .arrowsContainer svg {
+    width: 12px;
+    height: 47px;
+  }
+
+  .carouselContainer {
+    bottom: 6%;
+    width: 100%;
+  }
+
+  .paginationContainer {
+    justify-content: center;
+  }
+
+  .paginationDot {
+    width: 6px;
+    height: 6px;
+    background-color: #999999;
+  }
+
+  .active {
+    background-color: white;
+  }
+
+  .movies {
+    height: inherit;
+    width: 5346px;
+  }
+
+  .movie img {
+    height: inherit;
+  }
+
+  .playIcon,
+  .searchContainer {
+    display: none;
+  }
+
+  .titleContainer {
+    left: 4%;
+    bottom: 28%;
+  }
+
+  .titleContainer h2 {
+    font-size: 15px;
+  }
+
+  .titleContainer h5 {
+    font-size: 11px;
+  }
+
+  .shadow {
+    bottom: 100%;
+    background: rgba(0, 0, 0, 0.35);
+  }
+}

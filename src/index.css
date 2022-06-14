@@ -1,8 +1,49 @@
+@font-face {
+  font-family: 'BPG Mrgvlovani Caps 2010';
+  src: url('/src/fonts/bpg_mrgvlovani_caps_2010.ttf');
+}
+
+@font-face {
+  font-family: 'BPG Mrgvlovani';
+  src: url('/src/fonts/bpg_mrgvlovani_2009.ttf');
+}
+
+:root {
+  --light-font-color: #9da3b6;
+  --dark-font-color: #525252;
+  --header-bg-color: white;
+  --mobile-header-logo-color: #525252;
+  --body-bg-color: #e5e5e5;
+  --footer-logo-color: #444;
+  --mobile-body-bg-color: white;
+  --poster-hover-bg: white;
+}
+
+[data-theme='dark'] {
+  --dark-font-color: #d5ddf5;
+  --header-bg-color: #191b20;
+  --mobile-header-logo-color: white;
+  --body-bg-color: #202328;
+  --footer-logo-color: #a9adb9;
+  --mobile-body-bg-color: #202328;
+  --poster-hover-bg: #282c33;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'BPG Mrgvlovani Caps 2010', -apple-system, BlinkMacSystemFont,
+    'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans',
+    'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

@@ -44,6 +44,10 @@
 }
 
 @media only screen and (max-width: 1000px) {
+  .body {
+    background-color: var(--mobile-body-bg-color);
+  }
+
   .fb-container {
     width: calc(100vw - 28px);
     margin-bottom: 22px;

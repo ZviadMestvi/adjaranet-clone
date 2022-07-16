@@ -9,17 +9,6 @@ const HoverInfo = props => {
   const displayLeft = props.rightPosition - 594;
   const posterPosition = props.rightPosition >= window.innerWidth / 2;
 
-  const addFavouriteFilm = () => {
-    fetch(
-      `https://adjaranet-68699-default-rtdb.europe-west1.firebasedatabase.app/users/${context.userKey}/favouriteFilms.json`,
-      {
-        method: 'POST',
-        body: JSON.stringify(props.data),
-        headers: { 'Content-Type': 'application/json' },
-      }
-    );
-  };
-
   return (
     <div
       className={classes.wrapper}
@@ -54,11 +43,19 @@ const HoverInfo = props => {
           </div>
           <div>
             <p>ქვეყანა:</p>
-            <span>{props.data.countries.data[0]?.primaryName}</span>
+            <span>
+              {props.data.countries.data.map(
+                country => `${country.primaryName}, `
+              )}
+            </span>
           </div>
           <div>
             <p>რეჟისორი:</p>
-            <span>{props.data.directors.data[0]?.primaryName}</span>
+            <span>
+              {props.data.directors.data.map(country =>
+                country.primaryName !== '' ? `${country.primaryName}, ` : ''
+              )}
+            </span>
           </div>
           <div>
             <p>როლებში:</p>
@@ -68,7 +65,7 @@ const HoverInfo = props => {
 
         <div className={classes.description}>
           <h5>მოკლე აღწერა:</h5>
-          <p>{props.data.plot.data.description}</p>
+          <p>{props.data.plot?.data.description}</p>
         </div>
       </div>
 
@@ -82,7 +79,7 @@ const HoverInfo = props => {
           </svg>
           <span>ტრეილერი</span>
         </div>
-        <div onClick={addFavouriteFilm}>
+        <div>
           <svg fill="none" viewBox="0 0 22 12" width="22">
             <path
               stroke="#1A90CF"

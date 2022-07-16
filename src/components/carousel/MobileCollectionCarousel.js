@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 import MobileCollectionPoster from './MobileCollectionPoster';
 import classes from './MobileCollectionCarousel.module.css';
+import { Link } from 'react-router-dom';
 
 const MobileCollectionCarousel = props => {
   const [collectionsData, setCollectionsData] = useState();
@@ -25,7 +26,9 @@ const MobileCollectionCarousel = props => {
   return (
     <div>
       <div className={classes.headerContainer}>
-        <h1>{props.title}</h1>
+        <Link to="/collections" style={{ textDecoration: 'none' }}>
+          <h1>{props.title}</h1>
+        </Link>
       </div>
 
       <div className={classes.collectionsContainer}>{collectionPosters}</div>

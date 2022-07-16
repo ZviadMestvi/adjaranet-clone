@@ -1,0 +1,151 @@
+.searchContainer {
+  display: flex;
+  position: relative;
+  margin: 2px auto;
+  width: 1380px;
+  z-index: 9;
+}
+
+.search {
+  text-align: center;
+  font-size: 0.875rem;
+  border-radius: 5px;
+  border: 1px solid #1a90cf;
+  background-color: #ffffffb3;
+  padding: 4px;
+  outline: none;
+  width: 100%;
+  z-index: 4;
+}
+
+.search::placeholder {
+  font-size: 0.875rem;
+  font-family: 'BPG Mrgvlovani Caps 2010';
+}
+
+.search[type='text'] {
+  font-family: 'BPG Mrgvlovani Caps 2010';
+  color: #2c2c2c;
+}
+
+.search:focus ~ .searchShadow,
+.search:focus ~ .resultsWrapper {
+  display: block;
+}
+
+.searchContainer label {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.searchContainer label svg {
+  position: relative;
+  z-index: 10;
+}
+
+.resultsWrapper {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0px;
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  background-color: #fdfdfd;
+  z-index: 10;
+}
+
+.resultsTitleContainer {
+  display: flex;
+  height: 40px;
+}
+
+.resultsTitle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  font-family: 'BPG Mrgvlovani Caps 2010';
+  padding-right: 30px;
+  height: 100%;
+  background-color: rgb(253, 253, 253);
+  box-shadow: rgb(0 0 0 / 25%) 0px 2px 11px;
+  color: black;
+}
+
+.resultsTitle span {
+  margin-left: 10px;
+  color: #1a90cf;
+}
+
+.resultsContainer {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 25px 15px 10px;
+}
+
+.resultContainer {
+  position: relative;
+  width: 164px;
+  height: 164px;
+  border-radius: 8px;
+  margin: 0px 13px 15px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.resultBg {
+  background: url(../../assets/fastFive.jpg) center center / cover no-repeat;
+  height: 100%;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0px;
+  padding: 13px;
+  background: -webkit-linear-gradient(
+    bottom,
+    rgb(7, 7, 7) 0%,
+    rgba(7, 7, 7, 0) 100%
+  );
+  width: 100%;
+  color: #fdfdfd;
+}
+
+.titleContainer h4 {
+  font-size: 14px;
+  font-weight: 400;
+  margin-bottom: 2px;
+}
+
+.titleContainer h5 {
+  font-size: 10px;
+  font-weight: 400;
+}
+
+@media only screen and (max-width: 1400px) {
+  .searchContainer {
+    width: 980px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .searchContainer {
+    display: none;
+  }
+}
+
+.searchShadow {
+  display: none;
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}

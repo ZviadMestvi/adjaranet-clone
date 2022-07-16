@@ -1,0 +1,142 @@
+.wrapper {
+  background-color: var(--body-bg-color);
+}
+
+.container {
+  margin: 0 auto;
+  padding-top: 5.5em;
+  width: 1380px;
+}
+
+.headerContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerContainer h1 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 20px 0;
+  color: var(--dark-font-color);
+}
+
+.filter {
+  width: 240px;
+  position: relative;
+  cursor: pointer;
+}
+
+.filterText {
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #dddddd;
+  padding: 11px 15px 8px;
+  font-size: 12px;
+  width: 100%;
+  color: var(--filter-btn-font-color);
+}
+
+.filter svg {
+  position: relative;
+  top: 2px;
+  transform: scale(0.8);
+}
+
+.filter ul {
+  position: absolute;
+  background-color: var(--filter-ul-bg-color);
+  padding: 0px;
+  margin: 0px;
+  list-style-type: none;
+  right: 0px;
+  width: 100%;
+  z-index: 3;
+}
+
+.filter ul li {
+  padding: 13px 12px;
+  background-color: transparent;
+  color: var(--filter-btn-font-color);
+  cursor: pointer;
+}
+
+.filter ul li:hover {
+  background-color: white;
+  color: #525252;
+}
+
+.filter ul li p {
+  font-size: 0.75rem;
+  line-height: 1;
+  position: relative;
+  top: 2px;
+}
+
+.resultsCount {
+  display: none;
+}
+
+.collectionsWrapper {
+  display: flex;
+  flex-direction: column;
+  width: 1380px;
+  min-height: 100vh;
+}
+
+.collectionsChunk {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+@media only screen and (max-width: 1400px) {
+  .container,
+  .collectionsWrapper {
+    width: 980px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .wrapper {
+    background-color: var(--mobile-body-bg-color);
+  }
+
+  .container {
+    width: auto;
+  }
+
+  .headerContainer {
+    padding: 0 15px;
+  }
+
+  .headerContainer h1 {
+    margin-top: 20px;
+  }
+
+  .filter {
+    width: 200px;
+  }
+
+  .filterText {
+    padding: 9px 8px 6px;
+  }
+
+  .resultsCount {
+    display: block;
+    font-size: 12px;
+    font-family: 'BPG Mrgvlovani';
+    margin: 0 0 8px 14px;
+    color: #999999;
+  }
+
+  .collectionsWrapper {
+    padding: 0 15px 20px;
+    width: 100%;
+  }
+
+  .collectionsChunk {
+    margin-bottom: 6px;
+  }
+}

@@ -1,0 +1,412 @@
+.wrapper {
+  background-color: var(--body-bg-color);
+}
+
+.headerContainer {
+  display: flex;
+  align-items: flex-end;
+  flex-shrink: 0;
+  padding-bottom: 15px;
+  background: #070707;
+  height: 116px;
+}
+
+.mobileTitleContainer {
+  display: none;
+}
+
+.movieContainer {
+  position: relative;
+  background-color: #000000;
+  background-repeat: no-repeat;
+  background-position: center 0px;
+  background-size: 2066px;
+  flex-shrink: 0;
+  width: 100%;
+  min-height: 567px;
+}
+
+.movieShadow {
+  position: absolute;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #000000bf;
+}
+
+.moviePlayerWrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 0px auto;
+  flex-shrink: 0;
+  transition: opacity 0.5s ease 0s;
+  width: 1380px;
+  height: 100%;
+  z-index: 9;
+}
+
+.movieTitleContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.movieTitle {
+  padding: 10px 0px;
+  width: 50%;
+}
+
+.movieTitle h1 {
+  font-size: 24px;
+  font-weight: 300;
+  margin-bottom: 4px;
+  color: #fdfdfd;
+}
+
+.movieTitle h2 {
+  font-size: 18px;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #fdfdfd;
+}
+
+.ratingContainer {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.ratingContainer div {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-right: 16px;
+  cursor: pointer;
+}
+
+.ratingContainer div p {
+  font-size: 14px;
+  margin-left: 5px;
+  color: #fdfdfd;
+}
+
+.ratingContainer button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  font-family: 'BPG Mrgvlovani Caps 2010';
+  border: 2px solid #fdfdfd;
+  border-radius: 4px;
+  background: transparent;
+  padding: 0px 12px;
+  height: 35px;
+  color: #fdfdfd;
+  cursor: pointer;
+}
+
+.movieFiles {
+  display: none;
+}
+
+.infoContainer {
+  display: flex;
+  margin: 11em auto 32px;
+  position: relative;
+  width: 1380px;
+}
+
+.imgContainer {
+  width: 185px;
+  margin-right: 14px;
+}
+
+.image {
+  width: 185px;
+  height: 276px;
+  background-position: center center;
+  background-size: cover;
+}
+
+.imgContainer button {
+  display: flex;
+  align-items: center;
+  font-size: 9px;
+  font-family: 'BPG Mrgvlovani Caps 2010';
+  background-color: #e32828;
+  border-radius: 3px;
+  padding: 12px 13px;
+  margin-top: 15px;
+  height: 38px;
+  outline: 0;
+  border: 0;
+  color: white;
+  cursor: pointer;
+}
+
+.imgContainer button span {
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.textContainer {
+  background: var(--filter-btn-bg-color);
+  width: 100%;
+}
+
+/* Top container */
+
+.topContainer {
+  padding: 26px 26px 16px;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.topContainer div,
+.middleContainer div {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 12px;
+  margin-bottom: 3px;
+}
+
+.topContainer div p,
+.middleContainer div p {
+  margin-right: 3px;
+  margin-bottom: 3px;
+  color: var(--movie-desc-font-color);
+}
+
+.topContainer div span,
+.middleContainer div span {
+  color: #1a90cf;
+}
+
+/* Middle container */
+
+.middleContainer {
+  display: flex;
+  justify-content: space-between;
+  padding: 26px 26px 16px;
+  width: 100%;
+}
+
+#budgetContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Bottom container */
+
+.bottomContainer {
+  padding: 26px;
+}
+
+.bottomContainer h1 {
+  font-size: 1rem;
+  font-weight: 300;
+  margin-bottom: 8px;
+  color: var(--dark-font-color);
+}
+
+.bottomContainer p {
+  font-size: 0.75rem;
+  font-family: 'BPG Mrgvlovani';
+  line-height: 1.4;
+  color: var(--movie-desc-font-color);
+}
+
+.similarFilmsContainer {
+  background: var(--filter-btn-bg-color);
+  border-radius: 4px;
+  position: relative;
+  margin: 0px auto 32px;
+  overflow: hidden;
+  width: 1380px;
+  min-height: 280px;
+}
+
+.similarFilmsTitle {
+  display: flex;
+  border-bottom: 1px solid var(--filter-btn-border-color);
+}
+
+.similarFilmsTitle div {
+  font-size: 14px;
+  background-color: #0083ca;
+  padding: 15px 40px;
+  position: relative;
+  color: white;
+  cursor: pointer;
+}
+
+.mobileInfoContainer {
+  display: none;
+}
+
+@media only screen and (max-width: 1400px) {
+  .moviePlayerWrapper,
+  .infoContainer,
+  .similarFilmsContainer {
+    width: 980px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .wrapper {
+    background-color: var(--mobile-body-bg-color);
+  }
+
+  .headerContainer {
+    height: 82px;
+    background-color: white;
+  }
+
+  .mobileTitleContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-grow: 1;
+    width: 100%;
+    padding: 0px 14px;
+    background-color: white;
+  }
+
+  .mobileTitleContainer .titleContainer {
+    padding: 10px 0px;
+  }
+
+  .mobileTitleContainer .titleContainer h4 {
+    font-size: 13px;
+    font-weight: 400;
+    margin: 3px 0;
+    color: #525252;
+  }
+
+  .mobileTitleContainer .titleContainer h5 {
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #999999;
+  }
+
+  .movieContainer {
+    min-height: 220px;
+  }
+
+  .moviePlayerWrapper {
+    width: 100%;
+    height: 220px;
+  }
+
+  .movieTitleContainer,
+  .infoContainer,
+  .similarFilmsContainer {
+    display: none;
+  }
+
+  .movieFiles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0px 5.5em;
+    padding: 10px 10px 9px;
+    background-color: #1683c6;
+    width: 100%;
+  }
+
+  .movieFiles p {
+    font-size: 14px;
+    color: #ffffff;
+  }
+
+  .movieFiles::after {
+    content: '';
+    width: 0px;
+    height: 0px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #e2e2e2;
+    position: relative;
+    margin-left: 10px;
+    transition: transform 0.2s ease 0s;
+  }
+
+  .mobileInfoContainer {
+    display: block;
+    padding: 10px 14px;
+    border-radius: 0px;
+    min-height: 250px;
+    background-color: #fdfdfd;
+  }
+
+  .mobileInfoBtns {
+    display: flex;
+  }
+
+  .mobileInfoBtns button {
+    font-size: 12px;
+    font-family: 'BPG Mrgvlovani Caps 2010';
+    margin-bottom: 15px;
+    padding: 9px;
+    width: 50%;
+    text-align: center;
+    box-sizing: content-box;
+    background-color: transparent;
+    border: 1px solid #dfdfdf;
+    outline: 0;
+    cursor: pointer;
+  }
+
+  .mobileInfoBtn:hover {
+    border-bottom: 3px solid #0083ca;
+  }
+
+  .mobileInfoWrapper {
+    display: flex;
+  }
+
+  .mobileInfoContainer .image {
+    width: 100px;
+    height: 148px;
+    margin-right: 14px;
+    background-position: center center;
+    background-size: cover;
+  }
+
+  .mobileTextContainer {
+    font-size: 12px;
+  }
+
+  .mobileTextContainer p {
+    margin-bottom: 5px;
+    color: #828282;
+  }
+
+  .mobileInfoContainer p span {
+    color: #0083ca;
+  }
+
+  .mobileInfoDescription {
+    font-size: 12px;
+    font-family: 'BPG Mrgvlovani';
+    padding: 15px 0px;
+    line-height: 18px;
+    width: 95%;
+    color: #828282;
+  }
+}
+
+.activeBtn {
+  background-color: #1a90cf !important;
+  color: #fdfdfd !important;
+}
+
+/* Class(es) for video player */
+
+.preventScrolling {
+  height: 100px;
+  overflow: hidden;
+}

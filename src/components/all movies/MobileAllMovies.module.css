@@ -1,0 +1,388 @@
+.wrapper {
+  padding-top: 6.5em;
+  background-color: var(--mobile-body-bg-color);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 15px;
+}
+
+.filtersBtn button {
+  font-size: 12px;
+  font-family: 'BPG Mrgvlovani Caps 2010';
+  background-color: transparent;
+  border: 1px solid #dddddd;
+  border-radius: 2px;
+  line-height: 1;
+  padding: 13px 7px 9px;
+  outline: none;
+  color: var(--filter-btn-font-color);
+}
+
+.sortMenu {
+  flex-shrink: 0;
+  width: 200px;
+  height: 100%;
+  position: relative;
+}
+
+.sortText {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  padding: 9px 8px 6px;
+  border: 1px solid #dddddd;
+  color: var(--filter-btn-font-color);
+  cursor: pointer;
+}
+
+.sortText svg {
+  margin-left: 12px;
+  position: relative;
+  top: 2px;
+  transform: scale(0.8);
+}
+
+.sortMenu ul {
+  position: absolute;
+  background-color: var(--filter-ul-bg-color);
+  padding: 0px;
+  margin: 0px;
+  list-style-type: none;
+  right: 0px;
+  width: 100%;
+  z-index: 3;
+}
+
+.sortMenu ul li {
+  padding: 13px 12px;
+  background-color: transparent;
+  color: var(--filter-btn-font-color);
+  cursor: pointer;
+}
+
+.sortMenu ul li:hover {
+  background-color: white;
+  color: #525252;
+}
+
+.sortMenu ul li p {
+  font-size: 0.75rem;
+  line-height: 1;
+  position: relative;
+  top: 2px;
+}
+
+.sideFiltersContainer {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  width: calc(100% - 52px);
+  height: 100%;
+  transition: transform 0.2s ease 0s;
+  background-color: var(--body-bg-color);
+  overflow: hidden;
+  z-index: 11;
+}
+
+.sideFiltersHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 19px 15px 15px;
+  background-color: var(--header-bg-color);
+  margin-bottom: 10px;
+}
+
+.sideFiltersHeader h4 {
+  font-size: 14px;
+  font-weight: 300;
+  background-color: transparent;
+  border: 0px;
+  padding: 0px;
+  color: var(--dark-font-color);
+}
+
+.sideFiltersHeader h4 svg {
+  position: relative;
+  top: 1px;
+  margin-right: 11px;
+}
+
+.sideFiltersHeader button {
+  font-size: 12px;
+  font-family: 'BPG Mrgvlovani';
+  padding: 0px;
+  border: 0px;
+  background-color: transparent;
+  color: #999999;
+}
+
+.filterCategory,
+.subtitles {
+  font-size: 13px;
+  min-height: 53px;
+  padding: 14px 14px 5px 14px;
+  border-bottom: 1px solid #99999933;
+  background-color: var(--header-bg-color);
+  color: var(--dark-font-color);
+}
+
+.filterCategories div p {
+  font-size: 13px;
+  font-family: 'BPG Mrgvlovani Caps 2010';
+  line-height: 1.2;
+  height: 13px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  color: var(--dark-font-color);
+}
+
+.subtitles {
+  display: flex;
+  justify-content: space-between;
+}
+
+.toggleSwitch {
+  position: relative;
+  width: 28px;
+  height: 16px;
+  border-radius: 34px;
+  transition: background-color 0.2s ease 0s;
+  background-color: #999999;
+}
+
+.toggleCircle {
+  position: absolute;
+  width: 11px;
+  height: 11px;
+  border-radius: 100%;
+  background-color: white;
+  top: 2px;
+  left: 3px;
+  transition: transform 0.2s ease 0s;
+  transform: translateX(0px);
+}
+
+.categories,
+.countries,
+.languages {
+  width: 100%;
+  max-height: calc(100vh - 125px);
+  background-color: var(--header-bg-color);
+  overflow-x: hidden;
+}
+
+/* Rating filter */
+
+.ratingFilter,
+.dateFilter {
+  padding: 30px 14px;
+  background-color: var(--header-bg-color);
+  width: 100%;
+  height: 115px;
+}
+
+.scoreContainer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  margin-bottom: 22px;
+  padding: 0 14px;
+  width: 100%;
+  color: #999999;
+}
+
+.ratingSliderWrapper {
+  height: 40px;
+  padding: 10px;
+  background-color: var(--filter-btn-bg-color);
+  border-radius: 2px;
+  min-width: 335px;
+}
+
+.ratingSliderWrapper span,
+.dateFilter span {
+  font-size: 12px;
+  min-width: 43px;
+  color: var(--filter-btn-font-color);
+}
+
+.slider {
+  height: 10px;
+  position: relative;
+  background: transparent;
+  border: 1px solid #aaaaaa;
+  border-radius: 5px;
+}
+
+.slider .progress {
+  height: 100%;
+  left: 0%;
+  right: 0%;
+  position: absolute;
+  border-radius: 7px;
+  background: #1a90cf;
+}
+
+.sliderHandles {
+  position: relative;
+  bottom: 1px;
+}
+
+.sliderHandles input {
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  top: -7px;
+  background: none;
+  pointer-events: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+input[type='range']::-webkit-slider-thumb {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background: #dddddd;
+  pointer-events: auto;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+input[type='range']::-moz-range-thumb {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background: #dddddd;
+  pointer-events: auto;
+  -moz-appearance: none;
+  cursor: pointer;
+}
+
+/* Rating filter */
+
+.filterBtn {
+  display: flex;
+  flex-direction: column;
+  font-size: 13px;
+  font-family: 'BPG Mrgvlovani Caps 2010';
+  margin-left: 14px;
+  padding: 14px 14px 7px 0px;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 1px solid #99999933;
+  background-color: transparent;
+  outline: 0;
+  width: 100%;
+  color: var(--dark-font-color);
+}
+
+.setFiltersBtn {
+  padding: 10px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  background-color: var(--header-bg-color);
+}
+
+.setFiltersBtn button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-family: 'BPG Mrgvlovani Caps 2010';
+  background-color: #1683c6;
+  padding: 0px;
+  width: 100%;
+  height: 40px;
+  border: 0px;
+  color: white;
+  cursor: pointer;
+}
+
+.searchShadow {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.resultsCount {
+  font-size: 12px;
+  font-family: 'BPG Mrgvlovani';
+  margin: 8px 0 8px 14px;
+  color: #999999;
+}
+
+.moviesWrapper {
+  margin: 0 15px 30px;
+}
+
+.movieContainer {
+  display: flex;
+  margin-top: 9px;
+}
+
+.imgContainer {
+  width: 100px;
+  height: 148px;
+  border-radius: 4px;
+  background-color: #ebebeb;
+}
+
+.imgContainer img {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+}
+
+.textContainer {
+  margin-left: 10px;
+  padding: 6px 0;
+}
+
+.textContainer h2 {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--dark-font-color);
+}
+
+.textContainer h3 {
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--dark-font-color);
+}
+
+.textContainer p {
+  display: flex;
+  font-size: 12px;
+  margin-top: 15px;
+  color: var(--dark-font-color);
+}
+
+.textContainer span {
+  margin-left: 5px;
+  color: #1683c6;
+}
+
+.activeBtn {
+  background-image: url(../../assets/checkmark.svg);
+  background-repeat: no-repeat;
+  background-size: 12px;
+  background-position: right 29px center;
+  color: #1683c6;
+}

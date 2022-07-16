@@ -1,12 +1,14 @@
 import { Fragment, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 import HoverInfo from './HoverInfo';
 
 import classes from './MoviePoster.module.css';
 
 const MoviePoster = props => {
-  const [hover, setHover] = useState(false);
   const posterRef = useRef();
+  const navigate = useNavigate();
+  const [hover, setHover] = useState(false);
   const topPosition =
     window.scrollY + posterRef.current?.getBoundingClientRect().top;
   const rightPosition =
@@ -17,9 +19,15 @@ const MoviePoster = props => {
       <div
         ref={posterRef}
         className={classes.moviePoster}
-        style={{ backgroundImage: `url(${props.data.posters.data['240']})` }}
+        style={{ backgroundImage: `url(${props.data.posters?.data['240']})` }}
         onMouseOver={() => setHover(true)}
         onMouseOut={() => setHover(false)}
+        onClick={() =>
+          navigate(
+            `/movies/${props.data.adjaraId}/${props.data.secondaryName}`,
+            { state: { data: props.data } }
+          )
+        }
       >
         {hover && window.innerWidth >= 1000 ? (
           <div className={classes.movieLink}>

@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import MoviePoster from './MoviePoster';
 import classes from './MoviesCarousel.module.css';
 
 const MoviesCarousel = props => {
+  const navigate = useNavigate();
   const [currentURL, setCurrentURL] = useState(0);
   const [splittedArray, setSplittedArray] = useState();
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -63,7 +65,13 @@ const MoviesCarousel = props => {
     <div className={classes.wrapper}>
       <div className={classes.headerContainer}>
         <div className={classes.titleContainer}>
-          <h1>{props.title}</h1>
+          <h1
+            onClick={() =>
+              navigate('/movies', { state: { url: props.linkUrl } })
+            }
+          >
+            {props.title}
+          </h1>
           {props.url.length > 1 && (
             <div>
               <p

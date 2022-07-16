@@ -1,4 +1,5 @@
 import { useState, useEffect, Fragment } from 'react';
+import SearchBar from '../search/SearchBar';
 
 import classes from './MainCarousel.module.css';
 
@@ -125,31 +126,7 @@ const MainCarousel = () => {
           </div>
         </div>
 
-        <div className={classes.searchContainer}>
-          <input
-            type="text"
-            id="search"
-            autoComplete="off"
-            spellCheck="off"
-            placeholder="ძიება..."
-            className={classes.search}
-          />
-          <label htmlFor="search">
-            <svg
-              fill="none"
-              viewBox="0 0 20 20"
-              width="20"
-              className="svg-icon svg-icon--search"
-            >
-              <path
-                fill="#C4C4C4"
-                d="M18.293 19.707l-5.387-5.387A7.92268 7.92268 0 0 1 8 16a8.00035 8.00035 0 0 1-4.44456-1.3482 8.00036 8.00036 0 0 1-2.94647-3.5903A8 8 0 0 1 11.0615.60897a8.00036 8.00036 0 0 1 3.5903 2.94647A8.00035 8.00035 0 0 1 16 8a7.92184 7.92184 0 0 1-1.68 4.906l5.387 5.386-1.414 1.414v.001zM8 2a6.00002 6.00002 0 0 0-5.88471 7.17055 5.99996 5.99996 0 0 0 1.64207 3.07205 5.99939 5.99939 0 0 0 3.0721 1.6421 6.00028 6.00028 0 0 0 3.46664-.3414 5.99968 5.99968 0 0 0 2.6927-2.2099A5.99986 5.99986 0 0 0 14 8c-.0018-1.59073-.6346-3.11577-1.7594-4.24059C11.1158 2.63459 9.59073 2.00186 8 2z"
-              ></path>
-            </svg>
-          </label>
-
-          <div className={classes.searchShadow} />
-        </div>
+        <SearchBar />
       </div>
     </Fragment>
   );

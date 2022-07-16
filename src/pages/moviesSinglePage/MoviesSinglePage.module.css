@@ -1,0 +1,13 @@
+.mobileView {
+  display: none;
+}
+
+@media only screen and (max-width: 1000px) {
+  .desktopView {
+    display: none;
+  }
+
+  .mobileView {
+    display: block;
+  }
+}

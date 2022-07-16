@@ -13,6 +13,7 @@
   font-size: 1.25rem;
   font-weight: 500;
   color: var(--dark-font-color);
+  cursor: pointer;
 }
 
 .titleContainer div {
@@ -89,7 +90,7 @@
 
   .headerContainer {
     align-items: flex-end;
-    padding: 0 0 15px 4px;
+    padding: 10px 0 15px 4px;
   }
 
   .titleContainer {

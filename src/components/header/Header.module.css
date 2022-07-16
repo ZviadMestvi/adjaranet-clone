@@ -1,5 +1,5 @@
 .wrapper {
-  height: 70px;
+  height: 76px;
   width: 100%;
   background: linear-gradient(rgba(7, 7, 7, 0.5) 0%, rgba(7, 7, 7, 0) 100%);
   position: fixed;
@@ -72,6 +72,7 @@
 .categoryText {
   font-size: 0.5625rem; /* 9px */
   font-family: 'BPG Mrgvlovani Caps 2010', sans-serif;
+  font-weight: 300;
   margin-top: 4px;
 }
 
@@ -95,7 +96,7 @@
   margin-left: 42%;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
-  border-top: 5px solid rgb(226, 226, 226);
+  border-top: 5px solid #0083ca;
   transition: transform 0.4s ease 0s;
   transform: rotate(180deg);
 }

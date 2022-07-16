@@ -1,0 +1,311 @@
+.moviePlayerContainer {
+  position: relative;
+}
+
+.moviePlayer {
+  width: 1380px;
+  height: 477px;
+  box-shadow: rgb(1, 1, 1) 0px 0px 45px 0px;
+}
+
+#movie {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
+
+.controlBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0px auto;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: transparent;
+  transition: visibility 0.1s cubic-bezier(0.4, 0, 1, 1) 0s,
+    opacity 0.1s cubic-bezier(0.4, 0, 1, 1) 0s;
+  width: calc(100% - 24px);
+  height: 39px;
+  opacity: 1;
+  z-index: 60;
+}
+
+.progressControl {
+  width: 100%;
+  height: 3px;
+  bottom: 39px;
+  margin-bottom: 2px;
+  padding: 0;
+  position: absolute;
+  transition: height 0.2s ease-in-out;
+  background-color: #bababa4d;
+  cursor: pointer;
+}
+
+.progressControl:hover {
+  height: 5px;
+}
+
+.progressControl:hover input[type='range']::-webkit-slider-thumb {
+  display: block;
+}
+
+.progressControl input[type='range'] {
+  width: 100%;
+  height: 5px;
+  position: absolute;
+  background-color: transparent;
+  appearance: none;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.progressControl input[type='range']::-webkit-slider-thumb {
+  display: none;
+  width: 15px;
+  height: 15px;
+  position: relative;
+  background-color: #0083ca;
+}
+
+.loadProgress {
+  display: block;
+  width: 0%;
+  height: 100%;
+  position: absolute;
+  background: #ffffff66;
+}
+
+.playProgress {
+  width: 0%;
+  height: 100%;
+  background-color: #0083ca;
+  z-index: 5;
+}
+
+/* Controls holder left */
+
+.controlsHolderLeft {
+  display: flex;
+  margin-bottom: 2px;
+}
+
+.playBtn {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  width: 36px;
+  height: 36px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.volumePanel {
+  display: flex;
+  margin-right: 5px;
+  transition: width 0.1s;
+}
+
+.volumePanel button {
+  width: 36px;
+  height: 36px;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.volumePanel:hover .volumeControl {
+  display: flex;
+}
+
+.volumeControl {
+  display: flex;
+  align-items: center;
+  width: 3.5em;
+  height: 2.4em;
+  margin-right: 10px;
+  padding-bottom: 2px;
+  position: relative;
+}
+
+.volumeControl input[type='range'] {
+  width: 100%;
+  height: 4px;
+  position: absolute;
+  background-color: transparent;
+  appearance: none;
+  z-index: 10;
+}
+
+.volumeControl input[type='range']::-webkit-slider-thumb {
+  background-color: white;
+  width: 12px;
+  height: 12px;
+  appearance: none;
+}
+
+.volumeBar {
+  background-color: #bdbfc0;
+  width: 100%;
+  height: 4px;
+}
+
+.volumeLevel {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #0083ca;
+}
+
+/* .volumeLevel::before {
+  content: '';
+  position: absolute;
+  right: 0;
+  background-color: white;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+} */
+
+.timeControl {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+}
+
+.timeControl span {
+  padding: 0 8px;
+}
+
+/* Controls holder left */
+/* Controls holder right */
+
+.controlsHolderRight {
+  display: flex;
+  align-items: center;
+}
+
+.controlIcon {
+  width: 36px;
+  height: 36px;
+  opacity: 0.9;
+  transform: rotate(0deg);
+  transition: transform 0.1s cubic-bezier(0.4, 0, 1, 1),
+    -webkit-transform 0.1s cubic-bezier(0.4, 0, 1, 1),
+    -moz-transform 0.1s cubic-bezier(0.4, 0, 1, 1),
+    -o-transform 0.1s cubic-bezier(0.4, 0, 1, 1);
+  cursor: pointer;
+}
+
+#fitScreenIcon {
+  width: 20px;
+  height: 16px;
+  margin: 0 8px;
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+#settingsIconActive {
+  transform: rotate(30deg);
+  transition: transform 0.1s cubic-bezier(0.4, 0, 1, 1),
+    -webkit-transform 0.1s cubic-bezier(0.4, 0, 1, 1),
+    -moz-transform 0.1s cubic-bezier(0.4, 0, 1, 1),
+    -o-transform 0.1s cubic-bezier(0.4, 0, 1, 1);
+}
+
+.settingsMenu {
+  display: flex;
+  position: absolute;
+  bottom: 43px;
+  right: 48px;
+  background: #242424;
+  transition: opacity 0.1s cubic-bezier(0, 0, 0.2, 1);
+  box-shadow: 0 1px 3px #000;
+  color: white;
+}
+
+.settingsSectionTitle h5 {
+  font-size: 13px;
+  font-family: 'BPG Mrgvlovani Caps 2010';
+  font-weight: 300;
+  line-height: 17px;
+  background: #111;
+  text-transform: none;
+  text-align: left;
+  padding: 9px 21px;
+  color: #bbb;
+}
+
+.settingsSectionOptions p {
+  font-size: 12px;
+  font-family: roboto-geo-upper, Arial, Helvetica, sans-serif;
+  text-align: left;
+  text-transform: none;
+  padding: 10px 16px;
+  margin-right: 10px;
+  outline: none;
+  cursor: pointer;
+}
+
+.settingsSectionOptions p:hover {
+  border-bottom: 2px solid #0083ca;
+}
+
+.activeOption {
+  background-color: #161616;
+  cursor: default !important;
+}
+
+/* Controls holder right */
+
+@media only screen and (max-width: 1000px) {
+  .moviePlayer {
+    width: 100%;
+    height: 220px;
+    box-shadow: none;
+  }
+}
+
+/* Classes for video player */
+
+.bottomShadow {
+  position: absolute;
+  bottom: 0;
+  background-position: bottom;
+  background-repeat: repeat-x;
+  background-image: url(../../assets/bottomShadow.png);
+  pointer-events: none;
+  width: 100%;
+  height: 49px;
+  padding-top: 49px;
+  transition: opacity 0.25s cubic-bezier(0, 0, 0.2, 1);
+  -webkit-transition: opacity 0.25s cubic-bezier(0, 0, 0.2, 1);
+  -o-transition: opacity 0.25s cubic-bezier(0, 0, 0.2, 1);
+  -moz-transition: opacity 0.25s cubic-bezier(0, 0, 0.2, 1);
+  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+}
+
+.fitScreen {
+  object-fit: fill;
+}
+
+.fullWindow {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 99;
+}

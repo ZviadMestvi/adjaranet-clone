@@ -3,6 +3,7 @@ import { useState, useEffect, Fragment } from 'react';
 import CollectionPoster from './CollectionPoster';
 import MobileCollectionCarousel from './MobileCollectionCarousel';
 import classes from './CollectionsCarousel.module.css';
+import { Link } from 'react-router-dom';
 
 const CollectionsCarousel = props => {
   const [splittedArray, setSplittedArray] = useState();
@@ -14,7 +15,6 @@ const CollectionsCarousel = props => {
   const carouselSlideWidth = window.innerWidth >= 1400 ? 1380 : 980;
   const firstSlide = currentSlide === 0;
   const lastSlide = currentSlide === splittedArray?.length - 1;
-
 
   const prevSlide = () => {
     if (firstSlide) return;
@@ -60,7 +60,9 @@ const CollectionsCarousel = props => {
     <Fragment>
       <div className={classes.wrapper}>
         <div className={classes.headerContainer}>
-          <h1>{props.title}</h1>
+          <Link to="/collections" style={{ textDecoration: 'none' }}>
+            <h1>{props.title}</h1>
+          </Link>
           <div>
             <button
               className={firstSlide ? classes.unavailable : ''}

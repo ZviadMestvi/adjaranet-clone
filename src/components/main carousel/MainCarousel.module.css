@@ -121,6 +121,13 @@
   color: #dddddd;
 }
 
+.searchContainer {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+}
+
 .shadow {
   position: relative;
   bottom: 500px;

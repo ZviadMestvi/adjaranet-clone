@@ -126,13 +126,6 @@
   font-weight: 400;
 }
 
-.searchContainer {
-  position: absolute;
-  bottom: 20px;
-  left: 0;
-  right: 0;
-}
-
 @media only screen and (max-width: 1400px) {
   .searchContainer {
     width: 980px;

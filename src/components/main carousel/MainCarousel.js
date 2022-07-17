@@ -126,7 +126,9 @@ const MainCarousel = () => {
           </div>
         </div>
 
-        <SearchBar />
+        <div className={classes.searchContainer}>
+          <SearchBar />
+        </div>
       </div>
     </Fragment>
   );

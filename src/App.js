@@ -17,10 +17,11 @@ import Header from './components/header/Header';
 import MainCarousel from './components/main carousel/MainCarousel';
 import MoviesCarousel from './components/carousel/MoviesCarousel';
 import CollectionsCarousel from './components/carousel/CollectionsCarousel';
-import Footer from './components/footer/Footer';
 import CollectionsSinglePage from './pages/collectionsSinglePage/CollectionsSinglePage';
+import CollectionMoviesPage from './pages/collectionMoviesPage/CollectionMoviesPage';
 import MoviesSinglePage from './pages/moviesSinglePage/MoviesSinglePage';
 import MoviePage from './pages/moviePage/MoviePage';
+import Footer from './components/footer/Footer';
 import AppContext from './store/context';
 import './App.css';
 
@@ -87,6 +88,7 @@ const App = () => {
         <Route path="collections" element={<CollectionsSinglePage />} />
         <Route path="movies" element={<MoviesSinglePage />} />
         <Route path="movies/:id/:secondaryName" element={<MoviePage />} />
+        <Route path="collections/:id" element={<CollectionMoviesPage />} />
       </Routes>
     </Fragment>
   );

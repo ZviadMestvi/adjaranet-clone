@@ -1,0 +1,235 @@
+.wrapper {
+  background-color: var(--body-bg-color);
+}
+
+.container {
+  margin: 0 auto;
+  padding-top: 5.5em;
+  min-height: 100vh;
+  width: 1380px;
+}
+
+/* filter contaienr  */
+
+.filterContainer {
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  background-color: var(--filter-bg-color);
+  min-height: 58px;
+  margin-top: 16px;
+  padding-right: 14px;
+  border-bottom: 1px solid var(--filter-btn-border-color);
+  border-radius: 5px;
+}
+
+.filterContainer div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filterContainer .title p {
+  display: flex;
+  align-items: center;
+  -webkit-box-align: center;
+  font-size: 12px;
+  padding: 5px 10px;
+  margin-right: 10px;
+  border-right: 1px solid var(--filter-btn-border-color);
+  height: 57px;
+  max-width: 280px;
+  color: var(--dark-font-color);
+}
+
+.filterContainer .filmCount p {
+  font-size: 12px;
+  color: var(--dark-font-color);
+}
+
+.filterContainer .btnsContainer button {
+  font-size: 12px;
+  font-family: 'BPG Mrgvlovani Caps 2010';
+  border: none;
+  border-radius: 2px;
+  margin-right: 8px;
+  padding: 7px 9px 3px;
+  background-color: var(--filter-btn-bg2-color);
+  color: var(--dark-font-color);
+}
+
+.filterContainer .backBtn {
+  font-size: 11px;
+  font-family: 'BPG Mrgvlovani Caps 2010';
+  width: 39px;
+  height: 22px;
+  padding: 5px;
+  border: none;
+  border-radius: 2px;
+  background-color: #1a90cf;
+  outline: none;
+  color: #fdfdfd;
+  cursor: pointer;
+}
+
+.filterContainer .backBtn::before {
+  position: absolute;
+  margin-left: -15px;
+  margin-top: -4px;
+  content: '';
+  width: 0px;
+  height: 0px;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #1a90cf;
+}
+
+.moviesList {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  min-height: 100vh;
+  width: 1380px;
+}
+
+.moviesChunk {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.mobileMoviesList,
+.resultCount {
+  display: none;
+}
+
+.activeBtn {
+  background-color: #1a90cf !important;
+  color: var(--filter-bg-color) !important;
+}
+
+@media only screen and (max-width: 1400px) {
+  .container,
+  .moviesList {
+    width: 980px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .wrapper {
+    background-color: white;
+  }
+
+  .container {
+    width: 100%;
+  }
+
+  .filterContainer {
+    flex-direction: column;
+    background-color: transparent;
+    padding: 10px 14px;
+    margin-top: 12px;
+    margin-bottom: 32px;
+  }
+
+  .filterContainer div {
+    justify-content: start;
+    align-items: flex-start;
+  }
+
+  .filterContainer .title p {
+    height: 27px;
+    padding: 0 10px 0 0;
+  }
+
+  .filterContainer .filmCount p {
+    margin-top: 5px;
+  }
+
+  .filterContainer .backBtn,
+  .moviesList {
+    display: none;
+  }
+
+  .filterContainer .btnsContainer {
+    margin-top: 16px;
+  }
+
+  .filterContainer .btnsContainer button {
+    flex: 0 0 auto;
+    background-color: transparent;
+    text-align: left;
+    padding: 5px 0px;
+    margin-right: 18px;
+    margin-bottom: 0px;
+    outline: none;
+  }
+
+  .resultCount {
+    display: block;
+    font-size: 12px;
+    margin-left: 14px;
+    color: var(--filter-btn-font-color);
+  }
+
+  /* list of movies */
+
+  .mobileMoviesList {
+    display: flex;
+    flex-direction: column;
+    margin: 0 15px 30px;
+  }
+
+  .movieContainer {
+    display: flex;
+    margin-top: 9px;
+  }
+
+  .imgContainer {
+    width: 100px;
+    height: 148px;
+    border-radius: 4px;
+    background-color: #ebebeb;
+  }
+
+  .imgContainer img {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+  }
+
+  .textContainer {
+    margin-left: 10px;
+    padding: 6px 0;
+  }
+
+  .textContainer h2 {
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--dark-font-color);
+  }
+
+  .textContainer h3 {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--dark-font-color);
+  }
+
+  .textContainer p {
+    display: flex;
+    font-size: 12px;
+    margin-top: 15px;
+    color: var(--dark-font-color);
+  }
+
+  .textContainer span {
+    margin-left: 5px;
+    color: #1683c6;
+  }
+
+  .activeBtn {
+    background-color: transparent !important;
+    color: #1683c6 !important;
+  }
+}

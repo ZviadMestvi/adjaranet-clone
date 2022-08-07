@@ -8,7 +8,8 @@
   cursor: pointer;
 }
 
-.collectionPoster a {
+.collectionPoster .container {
+  height: 100%;
   text-decoration: none;
 }
 
@@ -22,7 +23,7 @@
   position: absolute;
 }
 
-.collectionPoster a::before {
+.collectionPoster .container::before {
   content: '';
   display: block;
   width: 100%;

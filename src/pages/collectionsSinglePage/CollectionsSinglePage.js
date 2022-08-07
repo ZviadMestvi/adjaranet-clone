@@ -6,7 +6,7 @@ import CollectionPoster from '../../components/carousel/CollectionPoster';
 import SearchBar from '../../components/search/SearchBar';
 import classes from './CollectionsSinglePage.module.css';
 
-const CollectionsSinglePage = props => {
+const CollectionsSinglePage = () => {
   const context = useContext(AppContext);
   const [openedFilter, setOpenedFilter] = useState(false);
   const [collectionsArray, setCollectionsArray] = useState();
@@ -25,20 +25,6 @@ const CollectionsSinglePage = props => {
     setCollectionsArray(result);
   };
 
-  const sortByDate = () => {
-    const result = defaultSorting?.slice().sort((a, b) => {
-      return new Date(b.createDate) - new Date(a.createDate);
-    });
-
-    setSortTypeDate(true);
-    splitToChunks(result, carouselItemCount);
-  };
-
-  const sortByPopularity = () => {
-    setSortTypeDate(false);
-    splitToChunks(defaultSorting, carouselItemCount);
-  };
-
   useEffect(() => {
     fetch(allCollections, {
       headers: {
@@ -53,6 +39,20 @@ const CollectionsSinglePage = props => {
       })
       .catch(err => console.log(err));
   }, [carouselItemCount]);
+
+  const sortByDate = () => {
+    const result = defaultSorting?.slice().sort((a, b) => {
+      return new Date(b.createDate) - new Date(a.createDate);
+    });
+
+    setSortTypeDate(true);
+    splitToChunks(result, carouselItemCount);
+  };
+
+  const sortByPopularity = () => {
+    setSortTypeDate(false);
+    splitToChunks(defaultSorting, carouselItemCount);
+  };
 
   const collections = collectionsArray?.map((chunk, i) => {
     return (

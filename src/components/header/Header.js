@@ -1,5 +1,16 @@
 import { Fragment, useState, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import {
+  moviesUrl,
+  animations,
+  trailers,
+  collections,
+  documentaries,
+  seriesUrl,
+  turkishSeries,
+  allMovies,
+  allSeries,
+} from '../../HelperConsts';
 import AppContext from '../../store/context';
 import AuthModal from '../authentication modal/AuthModal';
 import classes from './Header.module.css';
@@ -7,6 +18,7 @@ import classes from './Header.module.css';
 import MobileHeader from './MobileHeader';
 
 const Header = () => {
+  const navigate = useNavigate();
   const context = useContext(AppContext);
   const [navbar, setNavbar] = useState(false);
   const strokeColor =
@@ -107,15 +119,13 @@ const Header = () => {
               </a>
             </div>
             <div className={`${classes.moviesIcon} ${classes.category}`}>
-              <a href="#">
-                <svg
-                  className="svg-icon svg-icon--movies"
-                  width="30"
-                  height="24"
-                  viewBox="0 0 30 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+              <a
+                href=""
+                onClick={() =>
+                  navigate('/movies', { state: { url: allMovies } })
+                }
+              >
+                <svg width="30" height="24" viewBox="0 0 30 24" fill="none">
                   <path
                     className={fillColor}
                     fillRule="evenodd"
@@ -135,27 +145,55 @@ const Header = () => {
               </a>
               <div className={classes.arrowDown} />
               <div className={classes.dropdownMenu}>
-                <p>ქართულად გახმოვანებული</p>
+                <p
+                  onClick={() =>
+                    navigate('/movies', { state: { url: moviesUrl } })
+                  }
+                >
+                  ქართულად გახმოვანებული
+                </p>
                 <span>|</span>
-                <p>ანიმაცია</p>
+                <p
+                  onClick={() =>
+                    navigate('/movies', { state: { url: animations } })
+                  }
+                >
+                  ანიმაცია
+                </p>
                 <span>|</span>
-                <p>დოკუმენტური</p>
+                <p
+                  onClick={() =>
+                    navigate('/movies', { state: { url: documentaries } })
+                  }
+                >
+                  დოკუმენტური
+                </p>
                 <span>|</span>
-                <p>თრეილერები</p>
+                <p
+                  onClick={() =>
+                    navigate('/movies', { state: { url: trailers } })
+                  }
+                >
+                  თრეილერები
+                </p>
                 <span>|</span>
-                <p>კოლექციები</p>
+                <p
+                  onClick={() =>
+                    navigate('/movies', { state: { url: collections } })
+                  }
+                >
+                  კოლექციები
+                </p>
               </div>
             </div>
             <div className={`${classes.seriesIcon} ${classes.category}`}>
-              <a href="#">
-                <svg
-                  className="svg-icon svg-icon--series"
-                  width="30"
-                  height="24"
-                  viewBox="0 0 30 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+              <a
+                href=""
+                onClick={() =>
+                  navigate('/movies', { state: { url: allSeries } })
+                }
+              >
+                <svg width="30" height="24" viewBox="0 0 30 24" fill="none">
                   <path
                     fillRule="evenodd"
                     clipRule="evenodd"
@@ -178,21 +216,26 @@ const Header = () => {
               </a>
               <div className={classes.arrowDown} />
               <div className={classes.dropdownMenu}>
-                <p>ქართულად გახმოვანებული</p>
+                <p
+                  onClick={() =>
+                    navigate('/movies', { state: { url: seriesUrl } })
+                  }
+                >
+                  ქართულად გახმოვანებული
+                </p>
                 <span>|</span>
-                <p>თურქული</p>
+                <p
+                  onClick={() =>
+                    navigate('/movies', { state: { url: turkishSeries } })
+                  }
+                >
+                  თურქული
+                </p>
               </div>
             </div>
             <div className={`${classes.tvIcon} ${classes.category}`}>
               <a href="#">
-                <svg
-                  className="svg-icon svg-icon--tv"
-                  width="31"
-                  height="24"
-                  viewBox="0 0 31 33"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+                <svg width="31" height="24" viewBox="0 0 31 33" fill="none">
                   <path
                     fillRule="evenodd"
                     clipRule="evenodd"
@@ -243,13 +286,7 @@ const Header = () => {
             </div>
             <div className={`${classes.kidsIcon} ${classes.category}`}>
               <a href="#">
-                <svg
-                  className="svg-icon svg-icon--kids"
-                  width="24"
-                  height="25"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+                <svg width="24" height="25" fill="none">
                   <path
                     d="M22.907 12.493c0 2.982-1.162 5.842-3.23 7.95a10.926 10.926 0 0 1-7.8 3.294 10.926 10.926 0 0 1-7.8-3.293 11.355 11.355 0 0 1-3.074-9.82 11.276 11.276 0 0 1 3.545-6.53 10.894 10.894 0 0 1 6.778-2.817h.537a10.823 10.823 0 0 1 4.224.842 10.992 10.992 0 0 1 3.583 2.429 11.231 11.231 0 0 1 2.395 3.644c.556 1.363.842 2.825.842 4.301z"
                     strokeWidth="1.5"

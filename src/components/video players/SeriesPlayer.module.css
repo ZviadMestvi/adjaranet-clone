@@ -1,0 +1,146 @@
+.episodesBtn {
+  font-size: 16px;
+  font-family: 'BPG Mrgvlovani Caps 2010';
+  padding: 8px 19px 4px;
+  background-color: #0083ca;
+  transition: opacity 0.2s ease 0s;
+  position: absolute;
+  top: 28px;
+  right: 28px;
+  opacity: 0;
+  color: white;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.episodesBtn svg {
+  margin-right: 15px;
+}
+
+video:hover .episodeBtn {
+  opacity: 1;
+}
+
+.episodesWrapper {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  width: 318px;
+  height: 434px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: opacity 0.2s ease 0s;
+  z-index: 1;
+}
+
+.closeIcon {
+  position: absolute;
+  top: 29px;
+  right: 26px;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.seasonsContainer {
+  position: absolute;
+  bottom: 0px;
+  transform: translateX(0);
+  width: 100%;
+  height: calc(100% - 72px);
+  overflow: auto;
+}
+
+.seasonsContainer div {
+  font-size: 16px;
+  background-color: rgba(0, 0, 0, 0);
+  padding: 25px 46px;
+  color: #fdfdfd;
+  cursor: pointer;
+}
+
+.seasonsContainer div:hover,
+.seasonEpisode:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.activeSeason {
+  background-color: rgba(0, 0, 0, 0.6) !important;
+}
+
+.seasonTitle {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  font-size: 16px;
+  width: 60%;
+  height: 72px;
+  padding-left: 26px;
+  color: white;
+  cursor: pointer;
+}
+
+.seasonTitle svg {
+  margin-right: 22px;
+}
+
+.seasonEpisodes {
+  height: calc(100% - 72px);
+  position: relative;
+  overflow-y: auto;
+}
+
+.seasonEpisode {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+  font-size: 14px;
+  padding: 8px 19px;
+  color: #fdfdfd;
+  cursor: pointer;
+}
+
+.episodeThumbnail {
+  margin-right: 10px;
+  position: relative;
+}
+
+.episodeThumbnail img {
+  display: block;
+  object-fit: cover;
+  flex-shrink: 0;
+  width: 90px;
+  height: 60px;
+}
+
+.episodeThumbnail::after {
+  content: '01';
+  display: block;
+  font-size: 12px;
+  line-height: 1;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  padding: 3px 4px 1px;
+  background-color: #525252;
+  color: white;
+}
+
+.episodeDesc h5 {
+  font-size: 14px;
+  font-weight: 400;
+  color: #fdfdfd;
+}
+
+.episodeDesc .episodeLanguages {
+  display: flex;
+}
+
+.episodeDesc .episodeLanguages p {
+  font-size: 12px;
+  width: 43px;
+  height: 23px;
+  margin-right: 7px;
+  padding: 6px 9px 20px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+}

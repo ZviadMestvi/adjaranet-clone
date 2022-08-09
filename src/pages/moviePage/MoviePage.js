@@ -9,6 +9,7 @@ import MoviePlayer from '../../components/video players/MoviePlayer';
 import Footer from '../../components/footer/Footer';
 import AppContext from '../../store/context';
 import classes from './MoviePage.module.css';
+import SeriesPlayer from '../../components/video players/SeriesPlayer';
 
 const MoviePage = () => {
   const { state } = useLocation();
@@ -18,11 +19,12 @@ const MoviePage = () => {
   const [theaterMode, setTheaterMode] = useState(false);
   const [activeBtn, setActiveBtn] = useState('მსგავსი');
   const [actorsArray, setActorsArray] = useState();
+  const [movieUrl, setMovieUrl] = useState();
+  const [seriesEpisodes, setSeriesEpisodes] = useState();
+  const [moviePlayerData, setMoviePlayerData] = useState();
   const [trailerUrl, setTrailerUrl] = useState(
     movieData.trailers.data[0]?.fileUrl
   );
-  const [movieUrl, setMovieUrl] = useState();
-  const [moviePlayerData, setMoviePlayerData] = useState();
 
   const relatedMoviesUrl = `https://api.adjaranet.com/api/v1/movies/${movieData.adjaraId}/related?page=1&per_page=10&filters%5Bwith_actors%5D=3&filters%5Bwith_directors%5D=1&source=adjaranet`;
 
@@ -41,11 +43,12 @@ const MoviePage = () => {
     )
       .then(res => res.json())
       .then(data => {
+        setSeriesEpisodes(data.data);
         setMoviePlayerData(data.data[0]);
-        setMovieUrl(data.data[0].files[0].files[0].src);
+        setMovieUrl(data.data[0].files[0].files[1].src);
       })
       .catch(err => console.log(err));
-  }, [movieData.id]);
+  }, []);
 
   const trailerLanguageHandler = value => {
     switch (value) {
@@ -67,22 +70,24 @@ const MoviePage = () => {
   };
 
   const dubsLanguageHandler = value => {
-    switch (value) {
-      case 'GEO':
-        setMovieUrl(moviePlayerData.files[0].files[0].src);
-        break;
+    setMovieUrl(moviePlayerData.files[value].files[0].src);
 
-      case 'RUS':
-        setMovieUrl(moviePlayerData.files[1].files[0].src);
-        break;
+    // switch (value) {
+    //   case 'GEO':
+    //     setMovieUrl(moviePlayerData.files[0].files[0].src);
+    //     break;
 
-      case 'ENG':
-        setMovieUrl(moviePlayerData.files[2].files[0].src);
-        break;
+    //   case 'RUS':
+    //     setMovieUrl(moviePlayerData.files[1].files[0].src);
+    //     break;
 
-      default:
-        break;
-    }
+    //   case 'ENG':
+    //     setMovieUrl(moviePlayerData.files[2].files[0].src);
+    //     break;
+
+    //   default:
+    //     break;
+    // }
   };
 
   const qualityHandler = (quality, langValue) => {
@@ -183,13 +188,23 @@ const MoviePage = () => {
       >
         <div className={classes.movieShadow} />
         <div className={classes.moviePlayerWrapper}>
-          <MoviePlayer
+          {/* <MoviePlayer
             url={movieUrl}
             playerData={moviePlayerData?.files}
             toggleTheaterMode={setTheaterMode}
             changeLanguage={dubsLanguageHandler}
             changeQuality={qualityHandler}
             trailer={false}
+          /> */}
+          <SeriesPlayer
+            url={movieUrl}
+            playerData={{
+              languages: moviePlayerData?.files,
+              episodes: seriesEpisodes,
+            }}
+            toggleTheaterMode={setTheaterMode}
+            changeLanguage={dubsLanguageHandler}
+            changeQuality={qualityHandler}
           />
 
           <div className={classes.movieTitleContainer}>

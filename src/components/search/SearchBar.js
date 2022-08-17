@@ -1,33 +1,46 @@
+import { useState } from 'react';
+
 import classes from './SearchBar.module.css';
 
 const SearchBar = () => {
-  // const getSearchResults = el => {
-  //   fetch(
-  //     `https://api.adjaranet.com/api/v1/search?filters%5Btype%5D=movie%2Ccast&keywords=${el.target.value}&source=adjaranet`,
-  //     {
-  //       method: 'GET',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //         Accept: 'application/json',
-  //       },
-  //     }
-  //   )
-  //     .then(response => response.json())
-  //     .then(data => setResultsArray(() => data))
-  //     .catch(err => console.log(err));
-  // };
+  const [resultsArray, setResultsArray] = useState();
 
-  // const results = resultsArray.map(result => {
-  //   return (
-  //     <div key={result.name} className={classes.resultContainer}>
-  //       <div className={classes.resultBg} />
-  //       <div className={classes.titleContainer}>
-  //         <h4>{result.name}</h4>
-  //         <h5>{result.geoName}</h5>
-  //       </div>
-  //     </div>
-  //   );
-  // });
+  const getSearchResults = el => {
+    if (el.target.value.length === 0) setResultsArray();
+    if (el.target.value.length < 2) return;
+
+    const value = `https://api.adjaranet.com/api/v1/search?filters%5Btype%5D=movie%2Ccast&keywords=${el.target.value}&source=adjaranet`;
+    fetch(value, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+    })
+      .then(response => response.json())
+      .then(data => setResultsArray(() => data.data))
+      .catch(err => console.log(err));
+  };
+
+  const results = resultsArray?.map((result, i) => {
+    if (!result.adjaraId) return;
+    if (i > 10) return;
+
+    return (
+      <div key={result.id} className={classes.resultContainer}>
+        <div
+          className={classes.resultBg}
+          style={{
+            background: `url(${result.posters?.data[240]}) center center / cover no-repeat`,
+          }}
+        />
+        <div className={classes.titleContainer}>
+          <h4>{result.secondaryName}</h4>
+          <h5>{result.primaryName}</h5>
+        </div>
+      </div>
+    );
+  });
 
   return (
     <div className={classes.searchContainer}>
@@ -38,6 +51,7 @@ const SearchBar = () => {
         spellCheck="off"
         placeholder="ძიება..."
         className={classes.search}
+        onChange={getSearchResults.bind(this)}
       />
       <label htmlFor="search">
         <svg viewBox="0 0 20 20" width="20">
@@ -56,7 +70,7 @@ const SearchBar = () => {
           </div>
         </div>
 
-        <div className={classes.resultsContainer}>{}</div>
+        <div className={classes.resultsContainer}>{results}</div>
       </div>
 
       <div className={classes.searchShadow} />

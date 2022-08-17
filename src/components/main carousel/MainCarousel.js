@@ -125,10 +125,10 @@ const MainCarousel = () => {
             <div className={classes.carouselPagination}>{paginationDots}</div>
           </div>
         </div>
+      </div>
 
-        <div className={classes.searchContainer}>
-          <SearchBar />
-        </div>
+      <div className={classes.searchContainer}>
+        <SearchBar />
       </div>
     </Fragment>
   );

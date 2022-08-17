@@ -1,7 +1,7 @@
 .episodesBtn {
   font-size: 16px;
   font-family: 'BPG Mrgvlovani Caps 2010';
-  padding: 8px 19px 4px;
+  padding: 9px 19px 6px;
   background-color: #0083ca;
   transition: opacity 0.2s ease 0s;
   position: absolute;
@@ -17,7 +17,7 @@
   margin-right: 15px;
 }
 
-video:hover .episodeBtn {
+.moviePlayer:hover .episodesBtn {
   opacity: 1;
 }
 
@@ -113,7 +113,7 @@ video:hover .episodeBtn {
 }
 
 .episodeThumbnail::after {
-  content: '01';
+  content: attr(data-ep);
   display: block;
   font-size: 12px;
   line-height: 1;
@@ -143,4 +143,40 @@ video:hover .episodeBtn {
   padding: 6px 9px 20px;
   background: rgba(0, 0, 0, 0.6);
   color: white;
+}
+
+.activeLang {
+  background: rgb(0, 131, 202) !important;
+  color: white !important;
+}
+
+.loadingCircle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #1a90cf;
+  background-color: transparent;
+  animation: rotate 0.8s infinite;
+  position: absolute;
+  top: 40%;
+  left: 40%;
+}
+
+.loadingCircle div {
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  border-radius: 50%;
+  position: absolute;
+  top: -25%;
+  left: -25%;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(-360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

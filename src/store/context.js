@@ -90,7 +90,7 @@ export const AppContextProvider = props => {
 
     localStorage.setItem('username', username);
     localStorage.setItem('userKey', userKey);
-  }, [tokenData, logoutHandler, username]);
+  }, [tokenData, logoutHandler, username, userKey]);
 
   const contextValue = {
     authVis,

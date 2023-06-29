@@ -52,8 +52,8 @@ const CollectionMoviesPage = () => {
     }
 
     const result = [];
-    array?.map(movieData => {
-      movieData.movie.data.languages.data.map(lang => {
+    array?.forEach(movieData => {
+      movieData.movie.data.languages.data.forEach(lang => {
         if (lang.primaryNameTurned === el.target.innerText)
           result.push(movieData);
       });

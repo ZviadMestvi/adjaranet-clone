@@ -1,9 +1,17 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import classes from './SearchBar.module.css';
 
 const SearchBar = () => {
+  const navigate = useNavigate();
   const [resultsArray, setResultsArray] = useState();
+
+  // const openMovie = data => {
+  //   navigate(`/movies/${data.adjaraId}/${data.secondaryName}`, {
+  //     state: { data: data },
+  //   });
+  // };
 
   const getSearchResults = el => {
     if (el.target.value.length === 0) setResultsArray();
@@ -27,7 +35,11 @@ const SearchBar = () => {
     if (i > 10) return;
 
     return (
-      <div key={result.id} className={classes.resultContainer}>
+      <div
+        key={result.id}
+        className={classes.resultContainer}
+        // onClick={openMovie.bind(null, result)}
+      >
         <div
           className={classes.resultBg}
           style={{

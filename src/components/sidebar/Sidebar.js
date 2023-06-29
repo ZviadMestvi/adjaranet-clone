@@ -31,12 +31,7 @@ const Sidebar = props => {
           </div>
 
           <div className={classes.logoContainer}>
-            <svg
-              width="171"
-              height="45"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
+            <svg width="171" height="45" fill="none">
               <path
                 fill="#1683c6"
                 d="M97.148 44.547c12.333 0 22.331-9.972 22.331-22.273C119.479 9.972 109.481 0 97.149 0 84.814 0 74.816 9.972 74.816 22.274c0 12.301 9.998 22.273 22.331 22.273z"
@@ -70,7 +65,6 @@ const Sidebar = props => {
                 height="45"
                 viewBox="0 0 45 45"
                 fill="none"
-                xmlns="http://www.w3.org/2000/svg"
               >
                 <rect
                   x="8.25"
@@ -111,7 +105,6 @@ const Sidebar = props => {
                 height="45"
                 viewBox="0 0 45 45"
                 fill="none"
-                xmlns="http://www.w3.org/2000/svg"
               >
                 <path
                   fillRule="evenodd"
